@@ -48,3 +48,4 @@ coverage/
 
 # Firebase service account
 serviceAccountKey.json
+package-lock.json
