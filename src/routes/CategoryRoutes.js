@@ -7,7 +7,7 @@ const mongoose = require("mongoose"); // Mongoose for MongoDB operations
 const Category = require("../models/Category"); // Mongoose model for Category collection
 const { ApiResponse } = require("../utils/ApiResponse"); // Utility to standardize API responses
 const { verifyToken } = require("../middleware/VerifyToken"); // Middleware to verify JWT tokens
-const checkAdminRole = require("../middleware/checkAdminRole"); // Middleware to restrict access to admins
+const checkAdminRole = require("../middleware/CheckAdminRole"); // Middleware to restrict access to admins
 
 // Initialize an Express router instance
 const CategoryRouter = express.Router();
