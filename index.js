@@ -1,6 +1,5 @@
 // Load environment variables from a .env file into process.env
-require("dotenv").config();
-
+const doctenv = require("dotenv");
 // Import required dependencies
 const express = require("express"); // Express framework for building the server
 const cors = require("cors"); // Middleware to enable Cross-Origin Resource Sharing
@@ -28,6 +27,7 @@ const PromoCodeRoutes = require("./src/routes/PromoCodeRoutes");
 
 // Initialize the Express application
 const app = express();
+doctenv.config();
 
 // Apply middleware
 app.use(cors()); // Enable CORS for all routes to allow cross-origin requests
@@ -59,6 +59,6 @@ app.use("/api/promoCode", PromoCodeRoutes); // Mount promo code routes
 
 
 // Start the server and listen on port 8080
-app.listen(8080, () => {
-    console.log(`Server is running on http://localhost:8080`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });
